@@ -2,12 +2,16 @@ const range = document.querySelector('#visionRange');
 const clearScene = document.querySelector('.scene.clear');
 const handle = document.querySelector('#visionHandle');
 const divider = document.querySelector('#visionDivider');
+const blurLabel = document.querySelector('.label-blur');
+const clearLabel = document.querySelector('.label-clear');
 
 function setVision(value) {
   const position = Number(value);
   clearScene.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
   handle.style.left = `${position}%`;
   divider.style.left = `${position}%`;
+  clearLabel.classList.toggle('is-hidden', position <= 2);
+  blurLabel.classList.toggle('is-hidden', position >= 98);
   range.setAttribute('aria-valuetext', `${position}% чіткого зображення`);
 }
 

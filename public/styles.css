@@ -187,10 +187,12 @@ svg { display: block; }
 .button-dark:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0 var(--red); }
 .hero-vertical {
   position: absolute;
-  right: 7px;
-  top: 31%;
-  transform: translateY(-50%) rotate(90deg);
+  right: auto;
+  left: 52%;
+  top: 124px;
+  transform: translateX(-50%);
   transform-origin: center;
+  white-space: nowrap;
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.28em;
@@ -322,7 +324,9 @@ svg { display: block; }
   letter-spacing: 0.13em;
   text-transform: uppercase;
   pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
 }
+.vision-label.is-hidden { opacity: 0; visibility: hidden; transform: translateY(-7px); }
 .label-blur { right: 19px; background: rgba(23, 18, 13, 0.88); color: #fff; }
 .label-clear { left: 19px; background: var(--red); color: #fff; }
 .vision-demo input {
@@ -367,7 +371,7 @@ svg { display: block; }
 .brands {
   background: var(--red);
   color: var(--yellow-light);
-  padding: 25px 0 34px;
+  padding: 17px 0 20px;
   overflow: hidden;
   border-block: 1px solid var(--ink);
 }
@@ -376,7 +380,7 @@ svg { display: block; }
   grid-template-columns: 70px 1fr auto;
   align-items: center;
   gap: 20px;
-  padding: 0 var(--gutter) 19px;
+  padding: 0 var(--gutter) 12px;
   color: #fff;
 }
 .brands-head > span { font-family: var(--serif); font-style: italic; }
@@ -391,17 +395,18 @@ svg { display: block; }
 .brands-head small { color: #ffd7b7; letter-spacing: 0.1em; }
 .brand-runway {
   border-block: 1px solid rgba(255, 223, 148, 0.44);
-  padding: 9px 0 12px;
+  padding: 5px 0 6px;
   overflow: hidden;
 }
 .runway-second { border-top: 0; }
-.brand-track { gap: 28px; }
+.brand-track { gap: 22px; }
 .brand-track span {
   font-family: var(--serif);
-  font-size: clamp(28px, 3.65vw, 56px);
+  font-size: clamp(24px, 3vw, 44px);
+  line-height: 1;
   font-weight: 600;
   letter-spacing: -0.045em;
-  margin-inline: 16px;
+  margin-inline: 12px;
 }
 .brand-track i { font-style: normal; font-size: 13px; color: #fff; }
 .track-left { animation: brandsLeft 34s linear infinite; }
@@ -699,7 +704,7 @@ dialog::backdrop { background: rgba(81, 37, 5, 0.65); backdrop-filter: blur(8px)
   .vision-handle { width: 60px; height: 60px; }
   .brands-head { grid-template-columns: 32px 1fr; padding-inline: 22px; }
   .brands-head small { grid-column: 2; }
-  .brand-track span { font-size: 32px; }
+  .brand-track span { font-size: 27px; }
   .services { grid-template-columns: 1fr; gap: 70px; }
   .services-media { width: calc(100% - 12px); }
   .services-media img { max-height: 590px; }
