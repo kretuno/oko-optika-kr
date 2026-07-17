@@ -51,8 +51,8 @@
 
       <section class="direction-rail" aria-label="Напрями роботи">
         <div class="direction-track">
-          <span>ОПРАВИ</span><i>✦</i><span>СОНЦЕЗАХИСНІ ОКУЛЯРИ</span><i>✦</i><span>ЛІНЗИ</span><i>✦</i><span>ПЕРЕВІРКА ЗОРУ</span><i>✦</i>
-          <span>ОПРАВИ</span><i>✦</i><span>СОНЦЕЗАХИСНІ ОКУЛЯРИ</span><i>✦</i><span>ЛІНЗИ</span><i>✦</i><span>ПЕРЕВІРКА ЗОРУ</span><i>✦</i>
+          <div class="direction-group"><span>ОПРАВИ</span><i>✦</i><span>СОНЦЕЗАХИСНІ ОКУЛЯРИ</span><i>✦</i><span>ЛІНЗИ</span><i>✦</i><span>ПЕРЕВІРКА ЗОРУ</span><i>✦</i></div>
+          <div class="direction-group" aria-hidden="true"><span>ОПРАВИ</span><i>✦</i><span>СОНЦЕЗАХИСНІ ОКУЛЯРИ</span><i>✦</i><span>ЛІНЗИ</span><i>✦</i><span>ПЕРЕВІРКА ЗОРУ</span><i>✦</i></div>
         </div>
       </section>
 
@@ -129,13 +129,13 @@
       <section class="booking" id="booking">
         <div class="booking-copy reveal">
           <span class="section-number">04</span>
-          <p class="section-label">ОНЛАЙН-ЗАПИС</p>
-          <h2>Час побачити<br /><em>більше.</em></h2>
-          <p>Оберіть салон, дату та зручний час. Ми зв’яжемося з вами для підтвердження.</p>
+          <p class="section-label">ОНЛАЙН-ЗАПИС ДО ОПТОМЕТРИСТА</p>
+          <h2>Перевірити зір.<br /><em>Обрати правильні лінзи.</em></h2>
+          <p>Запишіться на професійну перевірку зору: оптометрист визначить корекцію та допоможе підібрати відповідні лінзи для ваших окулярів. Оберіть салон, дату й зручний час — ми зв’яжемося для підтвердження.</p>
           <div class="booking-hours"><span>ПН–СБ</span><strong>09:00—18:00</strong></div>
         </div>
         <form id="bookingForm" class="booking-form reveal">
-          <div class="form-topline"><span>ПЕРСОНАЛЬНИЙ ЗАПИС</span><span>01 / 05</span></div>
+          <div class="form-topline"><span>ЗАПИС ДО ОПТОМЕТРИСТА</span><span>01 / 05</span></div>
           <label>Ваше ім’я<input required name="name" autocomplete="name" placeholder="Як до вас звертатися" /></label>
           <label>Телефон<input required name="phone" type="tel" autocomplete="tel" placeholder="+38 (0__) ___-__-__" /></label>
           <label>Салон<select required name="store"><option value="">Оберіть салон</option><option>вул. Космонавтів, 26</option><option>вул. Свято-Миколаївська, 26</option><option>вул. Рекордна, 1</option></select></label>
@@ -145,7 +145,7 @@
           </div>
           <label class="consent"><input required type="checkbox" /><span>Даю згоду на обробку даних для підтвердження запису.</span></label>
           <button class="button button-dark" type="submit">
-            <span>Забронювати час</span>
+            <span>Записатися до оптометриста</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
           </button>
           <p class="form-result" id="formResult" aria-live="polite"></p>

@@ -52,7 +52,7 @@ svg { display: block; }
   height: 74px;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
 }
 .brand img,
 .footer-mark img {
@@ -187,14 +187,14 @@ svg { display: block; }
 .button-dark:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0 var(--red); }
 .hero-vertical {
   position: absolute;
-  right: 25px;
-  top: 50%;
+  right: 7px;
+  top: 31%;
   transform: translateY(-50%) rotate(90deg);
   transform-origin: center;
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.28em;
-  color: rgba(23, 18, 13, 0.58);
+  color: rgba(185, 21, 16, 0.82);
 }
 .hero-foot {
   position: absolute;
@@ -227,14 +227,21 @@ svg { display: block; }
   white-space: nowrap;
   will-change: transform;
 }
-.direction-track { animation: rail 32s linear infinite; }
-.direction-track span {
+.direction-track { animation: rail 26s linear infinite; }
+.direction-group {
+  flex: 0 0 auto;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.direction-group span {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.2em;
   margin: 0 34px;
 }
-.direction-track i { color: var(--yellow); font-style: normal; font-size: 12px; }
+.direction-group i { color: var(--yellow); font-style: normal; font-size: 12px; }
 @keyframes rail { to { transform: translateX(-50%); } }
 
 .section { padding: clamp(92px, 11vw, 170px) var(--gutter); }
@@ -298,11 +305,11 @@ svg { display: block; }
 .scene {
   position: absolute;
   inset: 0;
-  background: url("assets/vision-city-v2.jpg") center / cover no-repeat;
+  background: url("assets/vision-park-v3.jpg") center / cover no-repeat;
 }
 .scene.blurred {
-  filter: blur(14px) saturate(0.62);
-  transform: scale(1.04);
+  filter: blur(6px) saturate(0.82);
+  transform: scale(1.018);
 }
 .scene.clear { clip-path: inset(0 50% 0 0); }
 .vision-label {
@@ -360,7 +367,7 @@ svg { display: block; }
 .brands {
   background: var(--red);
   color: var(--yellow-light);
-  padding: 38px 0 54px;
+  padding: 25px 0 34px;
   overflow: hidden;
   border-block: 1px solid var(--ink);
 }
@@ -369,7 +376,7 @@ svg { display: block; }
   grid-template-columns: 70px 1fr auto;
   align-items: center;
   gap: 20px;
-  padding: 0 var(--gutter) 30px;
+  padding: 0 var(--gutter) 19px;
   color: #fff;
 }
 .brands-head > span { font-family: var(--serif); font-style: italic; }
@@ -384,14 +391,14 @@ svg { display: block; }
 .brands-head small { color: #ffd7b7; letter-spacing: 0.1em; }
 .brand-runway {
   border-block: 1px solid rgba(255, 223, 148, 0.44);
-  padding: 17px 0 20px;
+  padding: 9px 0 12px;
   overflow: hidden;
 }
 .runway-second { border-top: 0; }
 .brand-track { gap: 28px; }
 .brand-track span {
   font-family: var(--serif);
-  font-size: clamp(35px, 5vw, 76px);
+  font-size: clamp(28px, 3.65vw, 56px);
   font-weight: 600;
   letter-spacing: -0.045em;
   margin-inline: 16px;
@@ -692,14 +699,14 @@ dialog::backdrop { background: rgba(81, 37, 5, 0.65); backdrop-filter: blur(8px)
   .vision-handle { width: 60px; height: 60px; }
   .brands-head { grid-template-columns: 32px 1fr; padding-inline: 22px; }
   .brands-head small { grid-column: 2; }
-  .brand-track span { font-size: 40px; }
+  .brand-track span { font-size: 32px; }
   .services { grid-template-columns: 1fr; gap: 70px; }
   .services-media { width: calc(100% - 12px); }
   .services-media img { max-height: 590px; }
   .services-title { grid-template-columns: 37px 1fr; }
   .booking { grid-template-columns: 1fr; gap: 58px; padding: 85px 22px 105px; }
   .booking-copy { position: static; }
-  .booking h2 { font-size: 59px; }
+  .booking h2 { font-size: 49px; }
   .booking-form { padding: 28px 22px; box-shadow: 9px 9px 0 var(--ink); }
   .pair { grid-template-columns: 1fr; gap: 20px; }
   .stores-heading { grid-template-columns: 36px 1fr; gap: 14px; margin-bottom: 45px; }
