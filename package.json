@@ -2,5 +2,5 @@
   "name": "oko-optics",
   "private": true,
   "version": "1.0.0",
-  "scripts": { "build": "rm -rf dist && mkdir -p dist/server && cp -R public/. dist/ && cp worker/index.js dist/server/index.js", "start": "python3 -m http.server 4173 -d public" }
+  "scripts": { "build": "rm -rf dist docs && mkdir -p dist/server && cp -R public/. dist/ && cp worker/index.js dist/server/index.js && cp -R public docs", "start": "python3 -m http.server 4173 -d public" }
 }
