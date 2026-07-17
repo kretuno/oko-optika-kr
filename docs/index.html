@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="ОКО — оптика в Кривому Розі. Перевірка зору, брендові оправи та виготовлення окулярів." />
+    <meta name="description" content="ОКО — оптика в Кривому Розі. Перевірка зору, брендові оправи та індивідуальне виготовлення окулярів." />
+    <meta name="theme-color" content="#f6be19" />
     <title>ОКО — бачити бездоганно</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,69 +12,192 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="topbar">
-      <a class="brand" href="#top" aria-label="ОКО, головна"><img src="assets/oko-logo.png" alt="ОКО" /><span>ОПТИКА</span></a>
-      <nav><a href="#services">Послуги</a><a href="#vision">Ваш зір</a><a href="#stores">Салони</a></nav>
-      <button class="staff-link" id="staffOpen">Кабінет команди <span>↗</span></button>
-      <button class="menu" id="menu">☰</button>
+    <header class="topbar" id="topbar">
+      <a class="brand" href="#top" aria-label="ОКО, головна">
+        <img src="assets/oko-logo-transparent-v4.png" alt="ОКО" />
+      </a>
+      <nav id="mainNav" aria-label="Головна навігація">
+        <a href="#vision">Ваш зір</a>
+        <a href="#brands">Бренди</a>
+        <a href="#services">Послуги</a>
+        <a href="#stores">Салони</a>
+      </nav>
+      <div class="header-actions">
+        <button class="staff-link" id="staffOpen">Кабінет команди</button>
+        <a class="header-book" href="#booking">Записатися</a>
+      </div>
+      <button class="menu" id="menu" aria-label="Відкрити меню" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 17h18" /></svg>
+      </button>
     </header>
 
     <main id="top">
       <section class="hero">
-        <div class="hero-copy">
-          <p class="eyeline">ОПТИКА В КРИВОМУ РОЗІ</p>
-          <h1>Бачити бездоганно.<br /><em>Виглядати впевнено.</em></h1>
-          <p class="lead">Точна діагностика, преміальні оправи й окуляри, створені саме для вас.</p>
-          <a class="button primary" href="#booking">Записатися на перевірку <b>→</b></a>
+        <div class="hero-copy reveal">
+          <h1>Бачити<br />бездоганно.<br /><em>Виглядати впевнено.</em></h1>
+          <p class="lead">Точна перевірка зору, виразні оправи та окуляри, створені саме для вас.</p>
+          <a class="button button-dark" href="#booking">
+            <span>Записатися на перевірку</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </a>
         </div>
-        <div class="hero-meta"><span>Три салони</span><i></i><span>Ваш погляд — наша справа</span></div>
+        <div class="hero-vertical" aria-hidden="true">ОПТИКА · КРИВИЙ РІГ · З 1998</div>
+        <div class="hero-foot">
+          <span>Три салони в місті</span>
+          <span class="hero-rule"></span>
+          <span>Пн–Сб · 09:00–18:00</span>
+        </div>
       </section>
 
-      <section class="marquee" aria-label="Напрями"><span>ОПРАВИ</span><i>✦</i><span>СОНЦЕЗАХИСНІ ОКУЛЯРИ</span><i>✦</i><span>ЛІНЗИ</span><i>✦</i><span>ТОЧНІСТЬ</span></section>
+      <section class="direction-rail" aria-label="Напрями роботи">
+        <div class="direction-track">
+          <span>ОПРАВИ</span><i>✦</i><span>СОНЦЕЗАХИСНІ ОКУЛЯРИ</span><i>✦</i><span>ЛІНЗИ</span><i>✦</i><span>ПЕРЕВІРКА ЗОРУ</span><i>✦</i>
+          <span>ОПРАВИ</span><i>✦</i><span>СОНЦЕЗАХИСНІ ОКУЛЯРИ</span><i>✦</i><span>ЛІНЗИ</span><i>✦</i><span>ПЕРЕВІРКА ЗОРУ</span><i>✦</i>
+        </div>
+      </section>
 
       <section class="vision section" id="vision">
-        <div class="section-intro"><p class="eyeline">ВАШЕ БАЧЕННЯ</p><h2>Світ заслуговує<br />на чіткість.</h2></div>
-        <div class="vision-demo" id="visionDemo">
-          <div class="scene blurred"><span>Без корекції</span></div>
-          <div class="scene clear"><span>В окулярах ОКО</span></div>
-          <input id="visionRange" type="range" min="0" max="100" value="50" aria-label="Порівняння якості зору" />
-          <div class="vision-handle" id="visionHandle">↔</div>
+        <div class="vision-heading reveal">
+          <span class="section-number">01</span>
+          <div>
+            <p class="section-label">ВАШЕ БАЧЕННЯ</p>
+            <h2>Світ заслуговує<br />на <em>чіткість.</em></h2>
+          </div>
+          <p class="vision-intro">Пересуньте лінзу вправо, щоб відкрити більше чіткого зображення. Точну корекцію визначить оптометрист на прийомі.</p>
         </div>
-        <p class="vision-note">Побачте різницю — а точну корекцію визначить оптометрист під час індивідуальної перевірки.</p>
+        <div class="vision-demo reveal" id="visionDemo">
+          <div class="scene blurred" aria-hidden="true"></div>
+          <div class="scene clear" aria-hidden="true"></div>
+          <div class="vision-label label-blur">Без корекції</div>
+          <div class="vision-label label-clear">В окулярах ОКО</div>
+          <div class="vision-divider" id="visionDivider" aria-hidden="true"></div>
+          <input id="visionRange" type="range" min="0" max="100" value="50" aria-label="Порівняння якості зору: вправо — чіткіше" />
+          <div class="vision-handle" id="visionHandle" aria-hidden="true">
+            <svg viewBox="0 0 36 36"><path d="M13 12l-6 6 6 6M23 12l6 6-6 6M8 18h20" /></svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="brands" id="brands" aria-label="Бренди в салонах">
+        <div class="brands-head">
+          <span>02</span>
+          <p>БРЕНДИ В САЛОНАХ</p>
+          <small>Асортимент залежить від салону</small>
+        </div>
+        <div class="brand-runway">
+          <div class="brand-track track-left">
+            <span>RAY-BAN</span><i>◆</i><span>POLAROID</span><i>◆</i><span>VOGUE EYEWEAR</span><i>◆</i><span>EMPORIO ARMANI</span><i>◆</i><span>CARRERA</span><i>◆</i><span>GUESS</span><i>◆</i>
+            <span>RAY-BAN</span><i>◆</i><span>POLAROID</span><i>◆</i><span>VOGUE EYEWEAR</span><i>◆</i><span>EMPORIO ARMANI</span><i>◆</i><span>CARRERA</span><i>◆</i><span>GUESS</span><i>◆</i>
+          </div>
+        </div>
+        <div class="brand-runway runway-second">
+          <div class="brand-track track-right">
+            <span>TOMMY HILFIGER</span><i>◆</i><span>MOSCHINO</span><i>◆</i><span>MAX MARA</span><i>◆</i><span>BOSS</span><i>◆</i><span>ZEISS</span><i>◆</i><span>HOYA</span><i>◆</i>
+            <span>TOMMY HILFIGER</span><i>◆</i><span>MOSCHINO</span><i>◆</i><span>MAX MARA</span><i>◆</i><span>BOSS</span><i>◆</i><span>ZEISS</span><i>◆</i><span>HOYA</span><i>◆</i>
+          </div>
+        </div>
       </section>
 
       <section class="services section" id="services">
-        <div class="section-intro"><p class="eyeline">ВІД ПЕРЕВІРКИ ДО ГОТОВИХ ОКУЛЯРІВ</p><h2>Досконалість<br />у кожній деталі.</h2></div>
-        <div class="service-list">
-          <article><span>01</span><h3>Перевірка зору</h3><p>Уважна консультація оптометриста та точні рекомендації.</p></article>
-          <article><span>02</span><h3>Підбір оправи</h3><p>Консультант допоможе знайти силует, який личить саме вам.</p></article>
-          <article><span>03</span><h3>Виготовлення</h3><p>Майстер встановлює підібрані лінзи в обрану оправу.</p></article>
+        <div class="services-media reveal">
+          <img src="assets/craftsmanship-v2.jpg" alt="Оправа та лінза під час індивідуального виготовлення окулярів" />
+          <span class="media-caption">ТОЧНІСТЬ У КОЖНІЙ ДЕТАЛІ</span>
+        </div>
+        <div class="services-content reveal">
+          <div class="services-title">
+            <span class="section-number">03</span>
+            <p class="section-label">ВІД ПЕРЕВІРКИ ДО ГОТОВИХ ОКУЛЯРІВ</p>
+            <h2>Майстерність,<br />яку <em>видно.</em></h2>
+          </div>
+          <div class="service-list">
+            <article>
+              <span>01</span>
+              <div><h3>Перевірка зору</h3><p>Уважна консультація оптометриста й точні індивідуальні рекомендації.</p></div>
+            </article>
+            <article>
+              <span>02</span>
+              <div><h3>Підбір оправи</h3><p>Консультант знаходить форму, посадку та характер, які личать саме вам.</p></div>
+            </article>
+            <article>
+              <span>03</span>
+              <div><h3>Виготовлення</h3><p>Майстер встановлює підібрані лінзи, контролюючи точність на кожному етапі.</p></div>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="brands"><p>В САЛОНАХ ПРЕДСТАВЛЕНІ</p><div><span>RAY-BAN</span><span>POLAROID</span><span>VOGUE</span><span>EMPORIO ARMANI</span><span>ZEISS</span></div><small>Перелік брендів оновимо відповідно до фактичного асортименту салонів.</small></section>
-
       <section class="booking" id="booking">
-        <div class="booking-copy"><p class="eyeline">ОНЛАЙН-ЗАПИС</p><h2>Час побачити<br /><em>більше.</em></h2><p>Оберіть салон, дату та зручний час. Ми підтвердимо запис телефоном.</p><div class="booking-rule"></div><span>Пн–Сб · 09:00–18:00</span></div>
-        <form id="bookingForm" class="booking-form">
-          <label>Ваше ім’я<input required name="name" placeholder="Як до вас звертатися" /></label>
-          <label>Телефон<input required name="phone" type="tel" placeholder="+38 (0__) ___-__-__" /></label>
+        <div class="booking-copy reveal">
+          <span class="section-number">04</span>
+          <p class="section-label">ОНЛАЙН-ЗАПИС</p>
+          <h2>Час побачити<br /><em>більше.</em></h2>
+          <p>Оберіть салон, дату та зручний час. Ми зв’яжемося з вами для підтвердження.</p>
+          <div class="booking-hours"><span>ПН–СБ</span><strong>09:00—18:00</strong></div>
+        </div>
+        <form id="bookingForm" class="booking-form reveal">
+          <div class="form-topline"><span>ПЕРСОНАЛЬНИЙ ЗАПИС</span><span>01 / 05</span></div>
+          <label>Ваше ім’я<input required name="name" autocomplete="name" placeholder="Як до вас звертатися" /></label>
+          <label>Телефон<input required name="phone" type="tel" autocomplete="tel" placeholder="+38 (0__) ___-__-__" /></label>
           <label>Салон<select required name="store"><option value="">Оберіть салон</option><option>вул. Космонавтів, 26</option><option>вул. Свято-Миколаївська, 26</option><option>вул. Рекордна, 1</option></select></label>
-          <div class="pair"><label>Дата<input required name="date" type="date" /></label><label>Час<select required name="time"><option>09:00</option><option>09:30</option><option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option><option>12:00</option><option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option><option>16:00</option><option>16:30</option><option>17:00</option><option>17:30</option></select></label></div>
-          <label class="consent"><input required type="checkbox" /> <span>Даю згоду на обробку даних для підтвердження запису.</span></label>
-          <button class="button primary" type="submit">Забронювати час <b>→</b></button><p class="form-result" id="formResult" aria-live="polite"></p>
+          <div class="pair">
+            <label>Дата<input required name="date" type="date" /></label>
+            <label>Час<select required name="time"><option>09:00</option><option>09:30</option><option>10:00</option><option>10:30</option><option>11:00</option><option>11:30</option><option>12:00</option><option>14:00</option><option>14:30</option><option>15:00</option><option>15:30</option><option>16:00</option><option>16:30</option><option>17:00</option><option>17:30</option></select></label>
+          </div>
+          <label class="consent"><input required type="checkbox" /><span>Даю згоду на обробку даних для підтвердження запису.</span></label>
+          <button class="button button-dark" type="submit">
+            <span>Забронювати час</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </button>
+          <p class="form-result" id="formResult" aria-live="polite"></p>
         </form>
       </section>
 
-      <section class="stores section" id="stores"><div class="section-intro"><p class="eyeline">НАШІ САЛОНИ</p><h2>Завітайте<br />до ОКО.</h2></div><div class="store-grid">
-        <article><span class="store-number">01</span><h3>Саксаганський</h3><p>вул. Космонавтів, 26<br />Кривий Ріг, 50076</p><a href="tel:+380968160707">+38 (096) 816-07-07</a><small>Пн–Сб · 09:00–18:00</small></article>
-        <article><span class="store-number">02</span><h3>Центрально-Міський</h3><p>вул. Свято-Миколаївська, 26<br />Кривий Ріг, 50000</p><a href="tel:+380689830707">+38 (068) 983-07-07</a><small>Пн–Сб · 09:00–18:00</small></article>
-        <article><span class="store-number">03</span><h3>Покровський</h3><p>вул. Рекордна, 1<br />Кривий Ріг, 50053</p><a href="tel:+380689680707">+38 (068) 968-07-07</a><small>Пн–Сб · 09:00–18:00</small></article>
-      </div></section>
+      <section class="stores section" id="stores">
+        <div class="stores-heading reveal">
+          <span class="section-number">05</span>
+          <p class="section-label">НАШІ САЛОНИ</p>
+          <h2>ОКО поруч<br />із <em>вами.</em></h2>
+        </div>
+        <div class="store-list reveal">
+          <article>
+            <span class="store-number">01</span><h3>Саксаганський</h3>
+            <p>вул. Космонавтів, 26<br />Кривий Ріг, 50076</p>
+            <div><a href="tel:+380968160707">+38 (096) 816-07-07</a><small>Пн–Сб · 09:00–18:00</small></div>
+            <a class="store-arrow" href="https://www.google.com/maps/search/?api=1&query=Кривий+Ріг+Космонавтів+26" target="_blank" rel="noreferrer" aria-label="Показати салон на мапі"><svg viewBox="0 0 24 24"><path d="M5 19L19 5M9 5h10v10" /></svg></a>
+          </article>
+          <article>
+            <span class="store-number">02</span><h3>Центрально-Міський</h3>
+            <p>вул. Свято-Миколаївська, 26<br />Кривий Ріг, 50000</p>
+            <div><a href="tel:+380689830707">+38 (068) 983-07-07</a><small>Пн–Сб · 09:00–18:00</small></div>
+            <a class="store-arrow" href="https://www.google.com/maps/search/?api=1&query=Кривий+Ріг+Свято-Миколаївська+26" target="_blank" rel="noreferrer" aria-label="Показати салон на мапі"><svg viewBox="0 0 24 24"><path d="M5 19L19 5M9 5h10v10" /></svg></a>
+          </article>
+          <article>
+            <span class="store-number">03</span><h3>Покровський</h3>
+            <p>вул. Рекордна, 1<br />Кривий Ріг, 50053</p>
+            <div><a href="tel:+380689680707">+38 (068) 968-07-07</a><small>Пн–Сб · 09:00–18:00</small></div>
+            <a class="store-arrow" href="https://www.google.com/maps/search/?api=1&query=Кривий+Ріг+Рекордна+1" target="_blank" rel="noreferrer" aria-label="Показати салон на мапі"><svg viewBox="0 0 24 24"><path d="M5 19L19 5M9 5h10v10" /></svg></a>
+          </article>
+        </div>
+      </section>
     </main>
-    <footer><div class="brand footer-brand"><img src="assets/oko-logo.png" alt="ОКО" /><span>ОПТИКА</span></div><p>Бачити красиво — це мистецтво.</p><a href="#top">Нагору ↑</a></footer>
 
-    <dialog id="staffDialog"><button class="close" id="staffClose">×</button><div class="staff-panel"><p class="eyeline">ВНУТРІШНІЙ ПРОСТІР</p><h2>Кабінет команди</h2><p>Тут співробітники керуватимуть графіком та бачать нові записи.</p><div class="demo-schedule"><b>Сьогодні · Космонавтів, 26</b><span>09:00 — Ольга М. · перевірка зору</span><span>10:30 — Андрій К. · перевірка зору</span><span>14:00 — вільне вікно</span></div><p class="dialog-note">Після підключення захищеної бази доступ отримуватимуть лише уповноважені працівники.</p></div></dialog>
+    <footer>
+      <div class="footer-mark"><img src="assets/oko-logo-transparent-v4.png" alt="ОКО" /></div>
+      <p>Бачити красиво —<br /><em>це мистецтво.</em></p>
+      <div class="footer-meta"><span>Кривий Ріг</span><span>© 2026 ОКО</span></div>
+      <a class="to-top" href="#top" aria-label="Нагору"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" /></svg></a>
+    </footer>
+
+    <dialog id="staffDialog">
+      <button class="close" id="staffClose" aria-label="Закрити">×</button>
+      <div class="staff-panel">
+        <p class="section-label">ВНУТРІШНІЙ ПРОСТІР</p>
+        <h2>Кабінет команди</h2>
+        <p>Тут співробітники керуватимуть графіком і бачитимуть нові записи.</p>
+        <div class="demo-schedule"><b>Сьогодні · Космонавтів, 26</b><span>09:00 — Ольга М. · перевірка зору</span><span>10:30 — Андрій К. · перевірка зору</span><span>14:00 — вільне вікно</span></div>
+        <p class="dialog-note">Після підключення захищеної бази доступ отримають лише уповноважені працівники.</p>
+      </div>
+    </dialog>
     <script src="app.js"></script>
   </body>
 </html>
