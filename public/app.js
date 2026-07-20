@@ -18,6 +18,15 @@ function setVision(value) {
 range.addEventListener('input', (event) => setVision(event.target.value));
 setVision(range.value);
 
+const interestSelect = document.querySelector('#interestSelect');
+document.querySelectorAll('.collection-link').forEach((button) => {
+  button.addEventListener('click', () => {
+    interestSelect.value = button.dataset.collection;
+    document.querySelector('#booking').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.setTimeout(() => interestSelect.focus({ preventScroll: true }), 650);
+  });
+});
+
 const dateInput = document.querySelector('input[name="date"]');
 const today = new Date();
 const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
@@ -27,7 +36,7 @@ const form = document.querySelector('#bookingForm');
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   const data = new FormData(form);
-  document.querySelector('#formResult').textContent = `Дякуємо, ${data.get('name')}! Запит на ${data.get('date')} о ${data.get('time')} підготовлено. Ми зателефонуємо для підтвердження.`;
+  document.querySelector('#formResult').textContent = `Дякуємо, ${data.get('name')}! Запит «${data.get('interest')}» на ${data.get('date')} о ${data.get('time')} підготовлено. Ми зателефонуємо для підтвердження.`;
   form.reset();
   dateInput.min = localToday;
 });
